@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-MZ">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Criar Currículo - CV Fácil Moçambique</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="back-link">← Voltar</a>
+      <h1>Crie Seu Currículo</h1>
+      <p>Preencha os dados abaixo. Use a IA se precisar de ajuda!</p>
+    </div>
+  </header>
+
+  <main class="form-container">
+    <section class="form-section">
+      <h2>Dados Pessoais</h2>
+      <label>Nome Completo: <input type="text" id="nome" oninput="atualizarPreview()"/></label>
+      <label>Cargo Pretendido: <input type="text" id="cargo" oninput="atualizarPreview()"/></label>
+      <label>Telefone: <input type="tel" id="telefone" oninput="atualizarPreview()"/></label>
+      <label>E-mail: <input type="email" id="email" oninput="atualizarPreview()"/></label>
+      <label>Cidade/Província: <input type="text" id="localizacao" oninput="atualizarPreview()"/></label>
+      <label>Bilhete de Identidade: <input type="text" id="bi" placeholder="ex: 123456789LA012" oninput="atualizarPreview()"/></label>
+      <label>Data de Emissão do BI: <input type="text" id="dataBi" placeholder="ex: 15/03/2020" oninput="atualizarPreview()"/></label>
+    </section>
+
+    <section class="form-section">
+      <h2>Perfil Profissional</h2>
+      <label>
+        Resumo Profissional:
+        <textarea id="resumo" oninput="atualizarPreview()"></textarea>
+        <button type="button" onclick="ajudaIA('resumo')" class="ia-btn">💡 Ajuda com IA</button>
+      </label>
+      <label>
+        Objetivo Profissional:
+        <textarea id="objetivo" oninput="atualizarPreview()"></textarea>
+        <button type="button" onclick="ajudaIA('objetivo')" class="ia-btn">💡 Ajuda com IA</button>
+      </label>
+    </section>
+
+    <section class="form-section">
+      <h2>Experiência Profissional</h2>
+      <div id="experiencias">
+        <div class="exp-item">
+          <input type="text" placeholder="Empresa" class="empresa" oninput="atualizarPreview()"/>
+          <input type="text" placeholder="Cargo" class="cargoExp" oninput="atualizarPreview()"/>
+          <input type="text" placeholder="Período (ex: 2020-2023)" class="periodo" oninput="atualizarPreview()"/>
+          <textarea placeholder="Descrição das atividades" class="descExp" oninput="atualizarPreview()"></textarea>
+          <button type="button" onclick="ajudaIA(this.previousElementSibling)" class="ia-btn">💡 IA</button>
+        </div>
+      </div>
+      <button type="button" onclick="adicionarExperiencia()" class="add-btn">+ Adicionar Experiência</button>
+    </section>
+
+    <section class="form-section">
+      <h2>Formação Académica</h2>
+      <div id="formacoes">
+        <div class="form-item">
+          <input type="text" placeholder="Instituição" class="instituicao" oninput="atualizarPreview()"/>
+          <input type="text" placeholder="Curso" class="curso" oninput="atualizarPreview()"/>
+          <input type="text" placeholder="Ano de conclusão" class="ano" oninput="atualizarPreview()"/>
+          <textarea placeholder="Descrição (opcional)" class="descForm" oninput="atualizarPreview()"></textarea>
+          <button type="button" onclick="ajudaIA(this.previousElementSibling)" class="ia-btn">💡 IA</button>
+        </div>
+      </div>
+      <button type="button" onclick="adicionarFormacao()" class="add-btn">+ Adicionar Formação</button>
+    </section>
+
+    <section class="form-section">
+      <h2>Habilidades e Idiomas</h2>
+      <label>Habilidades (separadas por vírgula): <input type="text" id="habilidades" oninput="atualizarPreview()"/></label>
+      <label>Idiomas: <input type="text" id="idiomas" placeholder="ex: Português (nativo), Inglês (básico)" oninput="atualizarPreview()"/></label>
+    </section>
+
+    <section class="form-section">
+      <h2>Escolha o Modelo</h2>
+      <div class="modelos">
+        <label><input type="radio" name="modelo" value="classico" checked onchange="mudarModelo('classico')"> Clássico</label>
+        <label><input type="radio" name="modelo" value="moderno" onchange="mudarModelo('moderno')"> Moderno</label>
+        <label><input type="radio" name="modelo" value="criativo" onchange="mudarModelo('criativo')"> Criativo</label>
+      </div>
+    </section>
+
+    <section class="preview-section">
+      <h2>Pré-visualização do Currículo</h2>
+      <div id="preview" class="preview"></div>
+    </section>
+
+    <button onclick="abrirModalPagamento()" class="btn gerar-btn">Gerar PDF (40 MT)</button>
+  </main>
+
+  <!-- Modal de Pagamento -->
+  <div id="modalPagamento" class="modal">
+    <div class="modal-content">
+      <h2>✅ Pronto para Baixar!</h2>
+      <p>O download do seu currículo custa <strong>40 MT</strong>.</p>
+      <p>Por favor, pague via <strong>M-Pesa</strong> para:</p>
+      <div class="destaque">841785343 (José Francisco Tembe)</div>
+      <p>Após o pagamento, clique no botão abaixo.</p>
+      <button onclick="gerarPDF()" class="btn">Já paguei – Baixar PDF</button>
+      <button onclick="fecharModal()" class="btn cancelar">Cancelar</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+                                      </html>
