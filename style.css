@@ -1,0 +1,226 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #f4f6f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header {
+  background: #1a3a6e;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 2rem;
+}
+
+.header .back-link {
+  color: #ccc;
+  font-size: 1rem;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.main {
+  padding: 30px 0;
+}
+
+.form-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.form-section {
+  margin-bottom: 30px;
+}
+
+.form-section h2 {
+  color: #1a3a6e;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #1a3a6e;
+  padding-bottom: 5px;
+}
+
+label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: 500;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+textarea {
+  min-height: 80px;
+}
+
+.ia-btn, .add-btn {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+.add-btn {
+  background: #007bff;
+  padding: 10px 15px;
+}
+
+.modelos {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.modelos label {
+  background: #eee;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modelos input {
+  width: auto;
+  margin-right: 5px;
+}
+
+.preview-section {
+  margin-top: 40px;
+  border: 1px solid #ddd;
+  padding: 20px;
+  background: #f9f9f9;
+}
+
+.preview {
+  background: white;
+  padding: 20px;
+  min-height: 500px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  border-radius: 5px;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  margin: 30px auto;
+  padding: 15px;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  text-align: center;
+  font-weight: 500;
+}
+
+.gerar-btn {
+  background: #27ae60;
+  max-width: 400px;
+}
+
+.btn.cancelar {
+  background: #95a5a6;
+}
+
+.info, .support {
+  background: white;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.info ul, .support ul {
+  margin: 10px 0;
+}
+
+.support a {
+  color: #2980b9;
+  text-decoration: none;
+}
+
+.destaque {
+  background: #f8f9fa;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-weight: bold;
+  color: #c0392b;
+  text-align: center;
+  margin: 15px 0;
+}
+
+.cta {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: #1a3a6e;
+  color: white;
+  font-size: 0.9rem;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 1.6rem;
+  }
+  .modelos {
+    flex-direction: column;
+  }
+}
